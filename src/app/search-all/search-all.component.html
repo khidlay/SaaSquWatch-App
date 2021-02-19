@@ -1,1 +1,9 @@
-<p>search-all works!</p>
+<form #searchForm="ngForm" (ngSubmit)="emitSearchTerm(searchForm)">
+  <input
+    type="text"
+    name="searchTerm"
+    id="searchTerm"
+    placeholder="Search for a Movie"
+  />
+  <button>Search</button>
+</form>

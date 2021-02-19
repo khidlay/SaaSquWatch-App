@@ -1,1 +1,7 @@
-<p>watchlist works!</p>
+<app-header></app-header>
+<app-movie-card
+  *ngFor="let movie of watchlist"
+  [watchlistRef]="watchlist"
+  [movieRef]="movie"
+>
+</app-movie-card>

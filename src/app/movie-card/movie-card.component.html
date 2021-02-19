@@ -1,1 +1,13 @@
-<p>movie-card works!</p>
+<p>{{ movieRef.title }}</p>
+<div class="movie-image">
+  <img src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}" alt="" />
+</div>
+
+<div class="popup">
+  <p>Ttile: {{ movieRef.title }}</p>
+  <p>Summary:{{ movieRef.overview }}</p>
+  <p>Genre:{{ movieRef.genre_ids.name }}</p>
+  <p>Date:{{ movieRef.release_date }}</p>
+
+  <button (click)="emitwatchlistEvent(movieRef)">Add to Watchlist</button>
+</div>
