@@ -1,1 +1,10 @@
-<p>home works!</p>
+<app-header></app-header>
+
+<app-movie-card
+  *ngFor="let movie of movieResults?.results"
+  [movieRef]="movie"
+  [watchlistRef]="watchlist"
+  (watchlistEvent)="onwatchList($event)"
+></app-movie-card>
+
+<!-- <app-pop-up></app-pop-up> -->

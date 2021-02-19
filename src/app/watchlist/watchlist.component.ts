@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieWatchlistService } from '../movie-watchlist.service';
 
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.component.html',
-  styleUrls: ['./watchlist.component.css']
+  styleUrls: ['./watchlist.component.css'],
 })
 export class WatchlistComponent implements OnInit {
-
-  constructor() { }
+  watchlist: any[] = [];
+  constructor(private movieService: MovieWatchlistService) {}
 
   ngOnInit(): void {
+    this.getAndSetWatchList();
   }
 
+  getAndSetWatchList = () => {
+    this.watchlist = this.movieService.getwatchList();
+  };
 }
