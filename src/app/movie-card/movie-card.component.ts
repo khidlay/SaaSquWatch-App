@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { MovieWatchlistService } from '../movie-watchlist.service';
 
@@ -18,8 +19,8 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  emitwatchlistEvent = (movie: any): void => {
-    this.watchlistEvent.emit(movie);
+  emitwatchlistEvent = (form: NgForm): void => {
+    this.watchlistEvent.emit(form);
   };
 
   checkwatchList = (movie: any): boolean => {

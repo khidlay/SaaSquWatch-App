@@ -8,13 +8,14 @@ export class MovieWatchlistService {
   apiKey: string = 'c92a26a58678fac95ac049b1e5e1d7e4';
   movieDBTrendingUrl: string =
     'https://api.themoviedb.org/3/trending/movie/day';
-  movieDBSearchUrl: string = 'https://api.themoviedb.org/3/search/company';
+  movieDBSearchUrl: string = 'https://api.themoviedb.org/3/search/movie';
   movieDBGenreUrl: string = 'https://api.themoviedb.org/3/genre/movie/list';
   watchlist: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   getTrendingMovies = (): any => {
+    console.log('I heard this');
     return this.http.get(this.movieDBTrendingUrl, {
       params: {
         api_key: this.apiKey,
@@ -43,7 +44,7 @@ export class MovieWatchlistService {
     return this.http.get(this.movieDBSearchUrl, {
       params: {
         api_key: this.apiKey,
-        q: searchTerm,
+        query: searchTerm,
       },
     });
   };
