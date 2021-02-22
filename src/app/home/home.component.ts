@@ -35,6 +35,16 @@ export class HomeComponent implements OnInit {
       });
   };
 
+  onDiscoverSubmit = (form: NgForm) => {
+    let rating = form.form.value.rating;
+    let genre = form.form.value.genre;
+    this.movieService
+      .discoverMovies(genre, rating)
+      .subscribe((response: any) => {
+        this.movieResults = response;
+      });
+  };
+
   getGenre = () =>
     this.movieService.getGenreMovies().subscribe((response: any) => {
       this.movieResults = response;

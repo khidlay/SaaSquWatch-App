@@ -1,5 +1,8 @@
 <app-header></app-header>
-<app-search-all (searchEvent)="onSubmit($event)"></app-search-all>
+<app-search-all
+  (searchEvent)="onSubmit($event)"
+  (discoverEvent)="onDiscoverSubmit($event)"
+></app-search-all>
 <app-movie-card
   *ngFor="let movie of movieResults?.results"
   [movieRef]="movie"

@@ -9,7 +9,7 @@ import { MovieWatchlistService } from '../movie-watchlist.service';
 })
 export class SearchAllComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<NgForm>();
-  @Output() genreEvent = new EventEmitter<NgForm>();
+  @Output() discoverEvent = new EventEmitter<NgForm>();
 
   genres: any = [];
   ratings: any = [];
@@ -25,11 +25,6 @@ export class SearchAllComponent implements OnInit {
     this.searchEvent.emit(form);
   };
 
-  emitGenreEvent = (form: NgForm) => {
-    console.log(form);
-    this.genreEvent.emit(form);
-  };
-
   getGenres = () => {
     this.movieService.getGenreMovies().subscribe((response) => {
       console.log(response);
@@ -37,10 +32,15 @@ export class SearchAllComponent implements OnInit {
     });
   };
 
-  getRatings = () => {
-    this.movieService.discoverRatings(this.ratings).subscribe((response) => {
-      console.log(response);
-      this.ratings = response.ratings;
-    });
+  emitDiscoverEvent = (form: NgForm) => {
+    console.log(form);
+    this.discoverEvent.emit(form);
   };
+
+  // getRatings = () => {
+  //   this.movieService.discoverRatings(this.ratings).subscribe((response) => {
+  //     console.log(response);
+  //     this.ratings = response.ratings;
+  //   });
+  // };
 }

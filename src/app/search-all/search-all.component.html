@@ -9,22 +9,43 @@
   <button>Search</button>
 </form>
 
-<form #genreFilter="ngForm" (ngSubmit)="(emitGenreEvent)">
+<form #discoverForm="ngForm" (ngSubmit)="emitDiscoverEvent(discoverForm)">
   <label for="genre">Filter by Genre</label>
   <select name="genre" id="genre" ngModel>
     <option *ngFor="let genre of genres" value="{{ genre.id }}">
       {{ genre.name }}
     </option>
   </select>
-  <button>Genre Search</button>
-</form>
 
-<form>
   <label for="rating">Filter by Rating</label>
   <select name="rating" id="rating" ngModel>
-    <option *ngFor="let rating of ratings" value="{{ vote_average.gte }}">
-      {{ rating }}
-    </option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <button>Search</button>
+</form>
+
+<!-- <form #discoverForm="ngForm">
+  <label for="rating">Filter by Rating</label>
+  <select name="rating" id="rating" ngModel>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
   </select>
   <button>Rating Search</button>
-</form>
+</form> -->
