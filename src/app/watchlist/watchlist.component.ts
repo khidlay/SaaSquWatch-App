@@ -1,3 +1,4 @@
+import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
 import { Component, OnInit } from '@angular/core';
 import { MovieWatchlistService } from '../movie-watchlist.service';
 
@@ -16,5 +17,10 @@ export class WatchlistComponent implements OnInit {
 
   getAndSetWatchList = () => {
     this.watchlist = this.movieService.getwatchList();
+  };
+
+  onDelete = (movie: any) => {
+    this.movieService.removewatchList(movie);
+    this.getAndSetWatchList();
   };
 }

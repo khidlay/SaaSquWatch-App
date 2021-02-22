@@ -10,6 +10,7 @@ import { MovieWatchlistService } from '../movie-watchlist.service';
 })
 export class MovieCardComponent implements OnInit {
   @Output() watchlistEvent = new EventEmitter<any>();
+  @Output() deletewatchlistEvent = new EventEmitter<void>();
   @Input() movieRef: any;
   @Input() watchlistRef!: any[];
 
@@ -21,6 +22,10 @@ export class MovieCardComponent implements OnInit {
 
   emitwatchlistEvent = (form: NgForm): void => {
     this.watchlistEvent.emit(form);
+  };
+
+  emitDeletewatchlistEvent = (movie): void => {
+    this.deletewatchlistEvent.emit(movie);
   };
 
   checkwatchList = (movie: any): boolean => {

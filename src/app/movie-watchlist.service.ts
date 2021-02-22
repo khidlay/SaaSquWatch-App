@@ -29,6 +29,11 @@ export class MovieWatchlistService {
     console.log(this.watchlist);
   };
 
+  removewatchList = (movie: any): any => {
+    this.watchlist.splice(movie);
+    console.log(this.watchlist);
+  };
+
   getwatchList = (): any[] => {
     return this.watchlist;
   };

@@ -55,6 +55,11 @@ export class HomeComponent implements OnInit {
     this.getAndSetWatchList();
   };
 
+  onDelete = (movie: any): void => {
+    this.movieService.removewatchList(movie);
+    this.getAndSetWatchList();
+  };
+
   // So home page knows about watchlist
   getAndSetWatchList = (): void => {
     this.watchlist = this.movieService.getwatchList();
