@@ -8,3 +8,23 @@
   />
   <button>Search</button>
 </form>
+
+<form #genreFilter="ngForm" (ngSubmit)="(emitGenreEvent)">
+  <label for="genre">Filter by Genre</label>
+  <select name="genre" id="genre" ngModel>
+    <option *ngFor="let genre of genres" value="{{ genre.id }}">
+      {{ genre.name }}
+    </option>
+  </select>
+  <button>Genre Search</button>
+</form>
+
+<form>
+  <label for="rating">Filter by Rating</label>
+  <select name="rating" id="rating" ngModel>
+    <option *ngFor="let rating of ratings" value="{{ vote_average.gte }}">
+      {{ rating }}
+    </option>
+  </select>
+  <button>Rating Search</button>
+</form>

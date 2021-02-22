@@ -10,6 +10,7 @@ export class MovieWatchlistService {
     'https://api.themoviedb.org/3/trending/movie/day';
   movieDBSearchUrl: string = 'https://api.themoviedb.org/3/search/movie';
   movieDBGenreUrl: string = 'https://api.themoviedb.org/3/genre/movie/list';
+  movieDBDiscoverUrl: string = 'https://api.themoviedb.org/3/discover/movie';
   watchlist: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -45,6 +46,16 @@ export class MovieWatchlistService {
       params: {
         api_key: this.apiKey,
         query: searchTerm,
+      },
+    });
+  };
+
+  discoverMovies = (genre: string, rating: string) => {
+    return this.http.get(this.movieDBDiscoverUrl, {
+      params: {
+        api_key: this.apiKey,
+        with_genres: genre,
+        'vote_average.gte': rating,
       },
     });
   };

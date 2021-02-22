@@ -4,10 +4,11 @@
 </div>
 
 <div class="popup">
-  <p>Ttile: {{ movieRef.title }}</p>
+  <p>Title: {{ movieRef.title }}</p>
   <p>Summary:{{ movieRef.overview }}</p>
-  <p>Genre:{{ movieRef.genre_ids.name }}</p>
+  <p>Genre:{{ movieRef.genre_ids }}</p>
   <p>Date:{{ movieRef.release_date }}</p>
+  <p>Rating:{{ movieRef.vote_average }}</p>
 
   <button (click)="emitwatchlistEvent(movieRef)">Add to Watchlist</button>
 </div>
