@@ -1,9 +1,10 @@
-<form #searchForm="ngForm" (ngSubmit)="emitSearchTerm(searchForm)">
+<form #searchForm="ngForm" (ngSubmit)="emitSearchEvent(searchForm)">
   <input
     type="text"
     name="searchTerm"
     id="searchTerm"
     placeholder="Search for a Movie"
+    ngModel
   />
   <button>Search</button>
 </form>

@@ -1,4 +1,6 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MovieWatchlistService } from '../movie-watchlist.service';
 
 @Component({
@@ -21,6 +23,17 @@ export class HomeComponent implements OnInit {
       console.log(response);
       this.movieResults = response;
     });
+
+  onSubmit = (form: NgForm) => {
+    console.log(form);
+    console.log(form.form.value.searchTerm);
+    this.movieService
+      .searchMovies(form.form.value.searchTerm)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.movieResults = response;
+      });
+  };
 
   getGenre = () =>
     this.movieService.getGenreMovies().subscribe((response: any) => {
