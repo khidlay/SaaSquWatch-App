@@ -1,15 +1,29 @@
-<p>{{ movieRef.title }}</p>
-<div class="movie-image">
-  <img src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}" alt="" />
-</div>
+<main class="movie-list">
+  <section class="main-container">
+    <section class="movie-card-container">
+      <p>{{ movieRef.title }}</p>
+      <div (click)="showPopup()" class="movie-image">
+        <img
+          class="header-img"
+          src="https://image.tmdb.org/t/p/w500{{ movieRef.poster_path }}"
+          alt=""
+        />
+      </div>
+    </section>
 
-<div class="popup">
-  <p>Title: {{ movieRef.title }}</p>
-  <p>Summary:{{ movieRef.overview }}</p>
-  <!-- <p>Genre:{{ movieRef.genre_ids }}</p> -->
-  <p>Date:{{ movieRef.release_date }}</p>
-  <p>Rating:{{ movieRef.vote_average }}</p>
+    <div *ngIf="popup" class="movie-popup">
+      <button class="x-button" (click)="showPopup()">X</button>
+      <p>Title: {{ movieRef.title }}</p>
+      <p>Summary:{{ movieRef.overview }}</p>
+      <p>Date:{{ movieRef.release_date }}</p>
+      <p>Rating:{{ movieRef.vote_average }}</p>
 
-  <button (click)="emitwatchlistEvent(movieRef)">Add to Watchlist</button>
-  <button (click)="emitDeletewatchlistEvent(movieRef)">Remove Watchlist</button>
-</div>
+      <button class="button" (click)="emitwatchlistEvent(movieRef)">
+        Add to Watchlist
+      </button>
+      <button class="button" (click)="emitDeletewatchlistEvent(movieRef)">
+        Remove Watchlist
+      </button>
+    </div>
+  </section>
+</main>

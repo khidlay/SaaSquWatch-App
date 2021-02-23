@@ -1,8 +1,10 @@
 .header-container {
   background-color: black;
+  justify-content: center;
+  align-items: center;
   /* width: 100%; */
 }
 
 .logo-header {
-  width: 100%;
+  height: 150px;
 }

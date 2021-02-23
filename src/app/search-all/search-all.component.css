@@ -1,0 +1,30 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.search-container {
+  justify-content: center;
+}
+
+.search-form {
+  margin: 10px;
+}
+
+.filter-container {
+  color: #fcd757;
+  margin: 10px;
+}
+
+.search-input-field {
+  margin: 5px;
+  padding: 5px;
+  width: 50%;
+}
+
+.input-field {
+  margin: 5px;
+  padding: 5px;
+}

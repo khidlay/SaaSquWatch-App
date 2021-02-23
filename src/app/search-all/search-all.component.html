@@ -1,34 +1,49 @@
-<form #searchForm="ngForm" (ngSubmit)="emitSearchEvent(searchForm)">
-  <input
-    type="text"
-    name="searchTerm"
-    id="searchTerm"
-    placeholder="Search for a Movie"
-    ngModel
-  />
-  <button>Search</button>
-</form>
+<main class="form-container">
+  <form
+    class="search-form"
+    #searchForm="ngForm"
+    (ngSubmit)="emitSearchEvent(searchForm)"
+  >
+    <input
+      class="search-input-field"
+      type="text"
+      name="searchTerm"
+      id="searchTerm"
+      placeholder="Search for a Movie"
+      ngModel
+    />
+    <button class="button">Search</button>
+  </form>
 
-<form #discoverForm="ngForm" (ngSubmit)="emitDiscoverEvent(discoverForm)">
-  <label for="genre">Filter by Genre</label>
-  <select name="genre" id="genre" ngModel>
-    <option *ngFor="let genre of genres" value="{{ genre.id }}">
-      {{ genre.name }}
-    </option>
-  </select>
+  <form
+    class="filter-container"
+    #discoverForm="ngForm"
+    (ngSubmit)="emitDiscoverEvent(discoverForm)"
+  >
+    <select class="input-field" name="genre" id="genre" ngModel>
+      <option value="" disabled selected>Filter by Genre</option>
+      <option *ngFor="let genre of genres" value="{{ genre.id }}">
+        {{ genre.name }}
+      </option>
+    </select>
 
-  <label for="rating">Filter by Rating</label>
-  <select name="rating" id="rating" ngModel>
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-  </select>
-  <button>Search</button>
-</form>
+    <select class="input-field" name="rating" id="rating" ngModel>
+      <option value="" disabled selected>Filter by Rating</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <button class="button">Search</button>
+  </form>
+
+  <button class="watchlist-button">
+    <a routerLink="/watchlist"> Watchlist</a>
+  </button>
+</main>
