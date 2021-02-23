@@ -3,9 +3,12 @@
   (searchEvent)="onSubmit($event)"
   (discoverEvent)="onDiscoverSubmit($event)"
 ></app-search-all>
-<app-movie-card
-  *ngFor="let movie of movieResults?.results"
-  [movieRef]="movie"
-  [watchlistRef]="watchlist"
-  (watchlistEvent)="onwatchList($event)"
-></app-movie-card>
+<div class="movie-container">
+  <app-movie-card
+    class="movie-card"
+    *ngFor="let movie of movieResults?.results"
+    [movieRef]="movie"
+    [watchlistRef]="watchlist"
+    (watchlistEvent)="onwatchList($event)"
+  ></app-movie-card>
+</div>

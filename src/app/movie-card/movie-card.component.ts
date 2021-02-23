@@ -15,6 +15,7 @@ export class MovieCardComponent implements OnInit {
   @Input() watchlistRef!: any[];
 
   watchlist: any[] = [];
+  popup: boolean = false;
 
   constructor(private movieService: MovieWatchlistService) {}
 
@@ -32,5 +33,9 @@ export class MovieCardComponent implements OnInit {
     return this.movieRef.some((item) => {
       return item.id === movie.id;
     });
+  };
+
+  showPopup = (): void => {
+    this.popup = !this.popup;
   };
 }

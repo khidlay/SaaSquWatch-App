@@ -3,3 +3,16 @@ body {
   padding: 0;
   background-color: black;
 }
+
+.button {
+  background-color: #fcd757;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.watchlist-button {
+  background-color: #fcd757;
+  padding: 5px;
+  width: 50%;
+  font-size: larger;
+}

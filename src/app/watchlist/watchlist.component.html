@@ -1,8 +1,11 @@
 <app-header></app-header>
-<app-movie-card
-  *ngFor="let movie of watchlist"
-  [watchlistRef]="watchlist"
-  [movieRef]="movie"
-  (deletewatchlistEvent)="onDelete($event)"
->
-</app-movie-card>
+<div class="watchlist-container">
+  <app-movie-card
+    *ngFor="let movie of watchlist"
+    class="movie-card"
+    [watchlistRef]="watchlist"
+    [movieRef]="movie"
+    (deletewatchlistEvent)="onDelete($event)"
+  >
+  </app-movie-card>
+</div>
