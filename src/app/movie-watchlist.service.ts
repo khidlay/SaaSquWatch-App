@@ -24,15 +24,26 @@ export class MovieWatchlistService {
     });
   };
 
-  addwatchList = (movie: any): void => {
-    this.watchlist.push(movie);
-    console.log(this.watchlist);
+  // addwatchList = (movie: any): void => {
+  //   this.watchlist.push(movie);
+  //   console.log(this.watchlist);
+  // };
+
+  toggleWatchList = (movie: any): void => {
+    let index = this.watchlist.findIndex((item) => {
+      return item.id === movie.id;
+    });
+    if (index === -1) {
+      this.watchlist.push(movie);
+    } else {
+      this.watchlist.splice(index, 1);
+    }
   };
 
-  removewatchList = (movie: any): any => {
-    this.watchlist.splice(movie);
-    console.log(this.watchlist);
-  };
+  // removewatchList = (movie: any): any => {
+  //   this.watchlist.splice(movie);
+  //   console.log(this.watchlist);
+  // };
 
   getwatchList = (): any[] => {
     return this.watchlist;

@@ -51,12 +51,12 @@ export class HomeComponent implements OnInit {
     });
 
   onwatchList = (movie: any): void => {
-    this.movieService.addwatchList(movie);
+    this.movieService.toggleWatchList(movie);
     this.getAndSetWatchList();
   };
 
   onDelete = (movie: any): void => {
-    this.movieService.removewatchList(movie);
+    this.movieService.toggleWatchList(movie);
     this.getAndSetWatchList();
   };
 

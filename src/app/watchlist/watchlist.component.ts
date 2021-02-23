@@ -20,7 +20,7 @@ export class WatchlistComponent implements OnInit {
   };
 
   onDelete = (movie: any) => {
-    this.movieService.removewatchList(movie);
+    this.movieService.toggleWatchList(movie);
     this.getAndSetWatchList();
   };
 }
