@@ -6,9 +6,10 @@
 <div class="popup">
   <p>Title: {{ movieRef.title }}</p>
   <p>Summary:{{ movieRef.overview }}</p>
-  <p>Genre:{{ movieRef.genre_ids }}</p>
+  <!-- <p>Genre:{{ movieRef.genre_ids }}</p> -->
   <p>Date:{{ movieRef.release_date }}</p>
   <p>Rating:{{ movieRef.vote_average }}</p>
 
   <button (click)="emitwatchlistEvent(movieRef)">Add to Watchlist</button>
+  <button (click)="emitDeletewatchlistEvent(movieRef)">Remove Watchlist</button>
 </div>

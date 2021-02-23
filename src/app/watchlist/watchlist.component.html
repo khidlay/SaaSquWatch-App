@@ -3,5 +3,6 @@
   *ngFor="let movie of watchlist"
   [watchlistRef]="watchlist"
   [movieRef]="movie"
+  (deletewatchlistEvent)="onDelete($event)"
 >
 </app-movie-card>
