@@ -62,13 +62,22 @@
 }
 
 @media only screen and (min-width: 768px) {
-  /* .header-img {
-    height: auto;
-    width: 50%;
+  .header-img {
+    height: 250px;
+    width: 170px;
   }
-  .movie-popup {
-    height: 100%;
-    width: 50%;
+
+  .movie-card-container {
+    height: 250px;
+    width: 170px;
+  }
+
+
+
+
+   .movie-popup {
+    height: 250px;
+    width: 170px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
@@ -79,5 +88,5 @@
     justify-content: center;
     color: white;
     font-size: 100%;
-  } */
+  }  
 }
