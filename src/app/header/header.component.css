@@ -6,5 +6,11 @@
 }
 
 .logo-header {
-  height: 150px;
+  width: 100%;
+  /* height: 150px; */
+  align-items: center;
+}
+
+.watchlistLink {
+  text-decoration: none;
 }

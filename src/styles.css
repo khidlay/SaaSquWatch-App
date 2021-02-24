@@ -1,18 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   background-color: black;
+  font-family: "Lato", sans-serif;
 }
 
 .button {
   background-color: #fcd757;
   padding: 5px;
   border-radius: 15px;
+  text-decoration: none;
 }
 
-.watchlist-button {
+/* .watchlist-button {
   background-color: #fcd757;
   padding: 5px;
   width: 50%;
   font-size: larger;
+  text-decoration: none;
+  color: white;
+} */
+
+a {
+  color: white;
+  text-decoration: none;
 }
