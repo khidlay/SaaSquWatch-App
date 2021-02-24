@@ -1,7 +1,7 @@
 .watchlist-container {
   display: flex;
   flex-wrap: wrap;
-  
+  justify-content: center;
 }
 
 .movie-card {
@@ -9,7 +9,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  
   .movie-card {
     height: 400px;
     width: auto;
