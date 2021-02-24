@@ -5,6 +5,19 @@ body {
   padding: 0;
   background-color: black;
   font-family: "Lato", sans-serif;
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
 }
 
 .button {
@@ -12,6 +25,12 @@ body {
   padding: 5px;
   border-radius: 15px;
   text-decoration: none;
+}
+
+.button:hover {
+
+    background-color: #696D7D;
+
 }
 
 /* .watchlist-button {
@@ -24,6 +43,6 @@ body {
 } */
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
 }

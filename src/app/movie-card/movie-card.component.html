@@ -13,16 +13,17 @@
     <div *ngIf="popup" class="movie-popup">
       <button class="x-button" (click)="showPopup()">X</button>
       <p class="movie-title">{{ movieRef.title }}</p>
-      <p>{{ movieRef.overview }}</p>
-      <p>{{ movieRef.release_date }}</p>
-      <p>Rating:{{ movieRef.vote_average }}</p>
+      <p class="summary">{{ movieRef.overview }}</p>
+      <p>{{ movieRef.release_date }}   |   Rating: {{ movieRef.vote_average }}</p>
+      <!-- <p>Rating:{{ movieRef.vote_average }}</p> -->
 
-      <button class="button" (click)="emitwatchlistEvent(movieRef)">
+      <button class="popup-button" (click)="emitwatchlistEvent(movieRef)">
         Add to Watchlist
       </button>
-      <button class="button" (click)="emitDeletewatchlistEvent(movieRef)">
-        Remove Watchlist
+      <button class=" popup-button" (click)="emitDeletewatchlistEvent(movieRef)">
+        Remove From Watchlist
       </button>
+
     </div>
   </section>
 </main>
